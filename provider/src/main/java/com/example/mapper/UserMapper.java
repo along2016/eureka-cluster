@@ -1,7 +1,7 @@
 package com.example.mapper;
 
-import com.example.entity.User;
 import com.cloud.common.base.mapper.SuperMapper;
+import com.example.entity.User;
 
 /**
  * <p>

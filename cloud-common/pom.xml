@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.cloud</groupId>
-	<artifactId>cloud-commom</artifactId>
+	<artifactId>cloud-common</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cloud-commom</name>
+	<name>cloud-common</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -89,6 +89,11 @@
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-support</artifactId>
 			<version>2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
