@@ -15,9 +15,6 @@ import java.util.List;
 
 public class SuperServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> implements SuperService<T> {
 
-    public SuperServiceImpl() {
-    }
-
     @Override
     public boolean insertByVO(Object objectVO) {
         Long id = ((BaseEntity)objectVO).getId();
