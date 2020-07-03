@@ -1,6 +1,5 @@
 package com.example.service;
 
-import com.baomidou.mybatisplus.service.IService;
 import com.example.entity.User;
 
 /**
@@ -11,8 +10,6 @@ import com.example.entity.User;
  * @author wangjiliang
  * @since 2020-07-01
  */
-public interface UserService extends IService<User> {
-    /*
-        boolean insert(UserVO entity);
-    */
+public interface UserService {
+    boolean insert(User entity);
 }

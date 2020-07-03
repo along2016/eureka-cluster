@@ -45,8 +45,8 @@ public class UserController {
     */
     @GetMapping(value = "/allList")
     @ApiOperation("所有用户信息表列表")
-    public List<User> allList(User user) {
-        return userService.selectList(new EntityWrapper<>(user));
+    public boolean allList(User user) {
+        return userService.insert(user);
     }
 
 

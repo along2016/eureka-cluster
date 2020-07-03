@@ -2,6 +2,7 @@ package com.example.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.example.entity.User;
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.example.entity.User;
  * @author wangjiliang
  * @since 2020-07-01
  */
+@Component
 public interface UserMapper extends BaseMapper<User> {
 
 }
