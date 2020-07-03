@@ -5,16 +5,16 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.cloud.common.base.result.ResultMessage;
 import com.cloud.common.base.service.SuperService;
 import com.cloud.common.util.Utils;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
-import java.util.function.Consumer;
-import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.util.Assert;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 public class BaseController {
     public BaseController() {

@@ -1,5 +1,7 @@
 package com.example.service.impl;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.cloud.common.base.mapper.SuperMapper;
 import com.cloud.common.base.service.impl.SuperServiceImpl;
 import com.example.entity.User;
@@ -19,7 +21,7 @@ import java.io.Serializable;
  * @since 2020-07-01
  */
 @Service
-public class UserServiceImpl extends SuperServiceImpl<SuperMapper<User>,User> implements UserService {
+public class UserServiceImpl extends ServiceImpl<BaseMapper<User>,User> implements UserService {
 
     @Override
     @CacheEvict(value="otherCache",allEntries = true)

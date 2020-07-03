@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.baomidou.mybatisplus.service.IService;
 import com.example.entity.User;
 import com.cloud.common.base.service.SuperService;
 
@@ -11,7 +12,7 @@ import com.cloud.common.base.service.SuperService;
  * @author wangjiliang
  * @since 2020-07-01
  */
-public interface UserService extends SuperService<User> {
+public interface UserService extends IService<User> {
     /*
         boolean insert(UserVO entity);
     */

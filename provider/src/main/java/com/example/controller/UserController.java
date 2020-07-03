@@ -26,7 +26,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 @Api(tags = "用户信息表接口")
-public class UserController extends BaseController {
+public class UserController {
 
     @Autowired
     private UserService userService;
@@ -34,12 +34,12 @@ public class UserController extends BaseController {
     /**
      * 获取用户信息表列表
      */
-    @GetMapping(value = "/list")
-    @ApiOperation("用户信息表列表")
-    public ResultMessage<Page<User>> list(User user) {
-        Page page = this.getPagination();
-        return ResultMessage.success(userService.selectPage(page,new EntityWrapper<>(user)));
-    }
+//    @GetMapping(value = "/list")
+//    @ApiOperation("用户信息表列表")
+//    public ResultMessage<Page<User>> list(User user) {
+//        Page page = this.getPagination();
+//        return ResultMessage.success(userService.selectPage(page,new EntityWrapper<>(user)));
+//    }
 
     /**
     * 获取所有用户信息表列表
@@ -77,12 +77,12 @@ public class UserController extends BaseController {
     /**
      * "批量删除用户信息表"
      */
-    @ResponseBody
-    @DeleteMapping(value = "/delete")
-    @ApiOperation("批量删除用户信息表")
-    public ResultMessage<Object> delByIds(String ids) {
-        return this.deleteBatchIds(ids, userService);
-    }
+//    @ResponseBody
+//    @DeleteMapping(value = "/delete")
+//    @ApiOperation("批量删除用户信息表")
+//    public ResultMessage<Object> delByIds(String ids) {
+//        return this.deleteBatchIds(ids, userService);
+//    }
 
     /**
      * 修改用户信息表

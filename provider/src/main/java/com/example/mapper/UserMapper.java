@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.cloud.common.base.mapper.SuperMapper;
 import com.example.entity.User;
 
@@ -11,6 +12,6 @@ import com.example.entity.User;
  * @author wangjiliang
  * @since 2020-07-01
  */
-public interface UserMapper extends SuperMapper<User> {
+public interface UserMapper extends BaseMapper<User> {
 
 }

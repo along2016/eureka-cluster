@@ -19,7 +19,7 @@ public class SuperServiceImpl<M extends BaseMapper<T>, T> extends ServiceImpl<M,
     public boolean insertByVO(Object objectVO) {
         Long id = ((BaseEntity)objectVO).getId();
         if (id != null && id == 0L) {
-            ((BaseEntity)objectVO).setId((Long)null);
+            ((BaseEntity)objectVO).setId(null);
         }
 
         T t = this.getNewInstance(objectVO);
