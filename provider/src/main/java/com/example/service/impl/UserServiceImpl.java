@@ -2,8 +2,6 @@ package com.example.service.impl;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.cloud.common.base.mapper.SuperMapper;
-import com.cloud.common.base.service.impl.SuperServiceImpl;
 import com.example.entity.User;
 import com.example.service.UserService;
 import org.springframework.cache.annotation.CacheEvict;

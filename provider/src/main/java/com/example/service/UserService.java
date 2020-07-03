@@ -2,7 +2,6 @@ package com.example.service;
 
 import com.baomidou.mybatisplus.service.IService;
 import com.example.entity.User;
-import com.cloud.common.base.service.SuperService;
 
 /**
  * <p>

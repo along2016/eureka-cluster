@@ -1,7 +1,6 @@
 package com.example.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.cloud.common.base.mapper.SuperMapper;
 import com.example.entity.User;
 
 /**
