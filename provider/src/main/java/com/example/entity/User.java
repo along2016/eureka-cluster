@@ -1,6 +1,7 @@
 package com.example.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -20,6 +21,10 @@ import lombok.Data;
 public class User {
 
     private static final long serialVersionUID = 1L;
+
+    @TableId
+    @ApiModelProperty(value="",name="id")
+    private String id;
 
     @TableField
     @ApiModelProperty(value="",name="name")

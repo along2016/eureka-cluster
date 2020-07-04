@@ -4,6 +4,7 @@ import com.example.entity.User;
 import com.example.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,10 +41,10 @@ public class UserController {
     /**
     * 获取所有用户信息表列表
     */
-    @GetMapping(value = "/allList")
+    @GetMapping(value = "/selectById")
     @ApiOperation("所有用户信息表列表")
-    public Integer allList(User user) {
-        return userService.insert(user);
+    public User allList(@Param("id") Long id) {
+        return userService.selectById(id);
     }
 
 

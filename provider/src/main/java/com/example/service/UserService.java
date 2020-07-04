@@ -11,5 +11,6 @@ import com.example.entity.User;
  * @since 2020-07-01
  */
 public interface UserService {
-    Integer insert(User entity);
+
+    User selectById(Long id);
 }

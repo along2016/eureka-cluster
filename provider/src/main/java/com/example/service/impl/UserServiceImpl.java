@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public Integer insert(User entity) {
-        return userMapper.insert(entity);
+    public User selectById(Long id) {
+        return userMapper.selectById(id);
     }
 }
