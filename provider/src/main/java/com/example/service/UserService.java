@@ -1,5 +1,6 @@
 package com.example.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.entity.User;
 
 /**
@@ -10,7 +11,7 @@ import com.example.entity.User;
  * @author wangjiliang
  * @since 2020-07-01
  */
-public interface UserService {
+public interface UserService<T> extends IService<T> {
 
     User selectById(Long id);
 }
