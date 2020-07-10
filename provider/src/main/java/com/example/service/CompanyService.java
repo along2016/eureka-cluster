@@ -1,7 +1,7 @@
 package com.example.service;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.example.entity.Company;
-import com.f00lish.xcloud.common.base.service.SuperService;
 
 /**
  * <p>
@@ -11,8 +11,6 @@ import com.f00lish.xcloud.common.base.service.SuperService;
  * @author wangjiliang
  * @since 2020-07-06
  */
-public interface CompanyService extends SuperService<Company> {
-    /*
-        boolean insert(CompanyVO entity);
-    */
+public interface CompanyService extends IService<Company> {
+
 }

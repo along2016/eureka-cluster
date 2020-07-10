@@ -1,12 +1,11 @@
 package com.example.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 
 /**
@@ -18,7 +17,6 @@ import java.io.Serializable;
  * @since 2020-07-06
  */
 @Data
-//@Accessors(chain = true)
 @TableName("t_company")
 @ApiModel(value = "Company",description = "公司信息")
 public class Company implements Serializable {
@@ -38,7 +36,5 @@ public class Company implements Serializable {
     @TableField
     @ApiModelProperty(value="公司地址",name="address")
     private String address;
-
-
 
 }

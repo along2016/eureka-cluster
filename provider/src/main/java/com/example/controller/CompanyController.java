@@ -1,17 +1,17 @@
 package com.example.controller;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.plugins.Page;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import com.f00lish.xcloud.common.base.result.ResultMessage;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.validation.annotation.Validated;
-import java.util.List;
-import com.example.service.CompanyService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.entity.Company;
+import com.example.result.ResultMessage;
+import com.example.service.CompanyService;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * <p>
@@ -35,8 +35,8 @@ public class CompanyController {
     @GetMapping(value = "/list")
     @ApiOperation("公司信息列表")
     public ResultMessage<Page<Company>> list(Company company) {
-        Page page = this.getPagination();
-        return ResultMessage.success(companyService.selectPage(page,new EntityWrapper<>(company)));
+        Page page = new Page(1,5);
+        return ResultMessage.success(companyService.page(page, new QueryWrapper<>(company)));
     }
 
     /**
@@ -44,8 +44,8 @@ public class CompanyController {
     */
     @GetMapping(value = "/allList")
     @ApiOperation("所有公司信息列表")
-    public ResultMessage<List<Company>> allList(Company company) {
-        return ResultMessage.success(companyService.selectList(new EntityWrapper<>(company)));
+    public ResultMessage<List<Company>> allList() {
+        return ResultMessage.success(companyService.list());
     }
 
     /**
@@ -54,11 +54,12 @@ public class CompanyController {
     @PostMapping(value = "/add")
     @ApiOperation("新增公司信息")
     public ResultMessage<Company> add(@RequestBody Company company) {
-        boolean result = companyService.insert(company);
-        if (result)
+        boolean result = companyService.save(company);
+        if (result){
             return ResultMessage.success(company);
-        return ResultMessage.error();
         }
+        return ResultMessage.error();
+    }
 
     /**
      * 删除公司信息
@@ -66,20 +67,22 @@ public class CompanyController {
     @DeleteMapping(value = "/del")
     @ApiOperation("删除公司信息")
     public ResultMessage<String> delById(@RequestParam("id") Long id) {
-        boolean result = companyService.deleteById(id);
+        boolean result = companyService.removeById(id);
         if (result)
             return ResultMessage.success();
         return ResultMessage.error();
         }
 
     /**
-     * "批量删除公司信息"
+     * 批量删除公司信息
      */
     @ResponseBody
     @DeleteMapping(value = "/delete")
     @ApiOperation("批量删除公司信息")
     public ResultMessage<Object> delByIds(String ids) {
-        return this.deleteBatchIds(ids, companyService);
+        List idList = Arrays.asList(ids.split(","));
+        return companyService.removeByIds(idList) ? ResultMessage.success(ResultMessage.OK, "删除成功") :
+                ResultMessage.error(ResultMessage.FAIL, "删除失败");
     }
 
     /**
@@ -89,8 +92,9 @@ public class CompanyController {
     @ApiOperation("修改公司信息")
     public ResultMessage<String> update(@RequestBody Company company) {
         boolean result = companyService.updateById(company);
-        if (result)
+        if (result){
             return ResultMessage.success();
+        }
         return ResultMessage.error();
     }
 
@@ -100,7 +104,7 @@ public class CompanyController {
     @GetMapping(value = "/get")
     @ApiOperation("查看公司信息")
     public ResultMessage<Company> get(@RequestParam("id") Long id) {
-        return ResultMessage.success(companyService.selectById(id));
+        return ResultMessage.success(companyService.getById(id));
     }
 
 }

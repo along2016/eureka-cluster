@@ -1,15 +1,15 @@
 package com.example.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.entity.User;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
- * 用户信息表 Mapper 接口
+ * 用户信息 Mapper 接口
  * </p>
  *
  * @author wangjiliang
- * @since 2020-07-01
+ * @since 2020-07-10
  */
 public interface UserMapper extends BaseMapper<User> {
 
