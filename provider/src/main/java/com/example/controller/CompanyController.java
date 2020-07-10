@@ -68,8 +68,9 @@ public class CompanyController {
     @ApiOperation("删除公司信息")
     public ResultMessage<String> delById(@RequestParam("id") Long id) {
         boolean result = companyService.removeById(id);
-        if (result)
+        if (result){
             return ResultMessage.success();
+        }
         return ResultMessage.error();
         }
 
