@@ -1,7 +1,5 @@
 spring:
+  profiles:
+    active: home
   application:
     name: provider
-  datasource:
-    url: jdbc:mysql://192.168.10.134:3306/demo?useUnicode=true&characterEncoding=utf8
-    username: root
-    password: 123456
